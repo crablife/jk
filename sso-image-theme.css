@@ -1,0 +1,170 @@
+/* Screenshot-inspired theme for representative Garmin SSO class names.
+ * Verify the actual SDK DOM before deploying, especially modal selectors.
+ * Native navigation/status bars are not controlled by this stylesheet.
+ */
+.g__sso {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #0c0c0d;
+    padding: 28px 20px 32px;
+    background: #fff;
+}
+
+.g__sso *, .g__sso *::before, .g__sso *::after { box-sizing: border-box; }
+.g__sso [hidden] { display: none !important; }
+.g__sso__title { display: none; }
+.g__sso__form-group { position: relative; margin-bottom: 20px; }
+.g__sso__form-label,
+.g__sso__form-label.selected {
+    display: block;
+    position: static;
+    width: 100%;
+    margin: 0 0 8px;
+    transform: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+}
+.g__sso__form-field {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 10px 12px;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px;
+    background: #fff;
+    color: #0c0c0d;
+    font: inherit;
+}
+.g__sso__form-field:focus {
+    outline: 2px solid #126cfb;
+    outline-offset: 2px;
+    border-color: #126cfb;
+}
+.g__sso__form-field.g__sso__password-field { padding-right: 48px; }
+.g__sso__form-group--error .g__sso__form-field {
+    padding-left: 44px;
+    border-color: #c21000;
+    background: #fff0f0;
+}
+.g__sso__form-group--error .g__sso__password-field { padding-right: 48px; }
+.g__sso__error-icon {
+    position: absolute;
+    top: 31px;
+    left: 12px;
+    right: auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #c21000;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+}
+.g__sso__password-toggle,
+.g__sso__form-group--error .g__sso__password-toggle {
+    position: absolute;
+    top: 26px;
+    right: 8px;
+    width: 32px;
+    height: 36px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #536a79;
+    cursor: pointer;
+    font-size: 0;
+}
+.g__sso__password-toggle::before {
+    content: "";
+    display: block;
+    width: 21px;
+    height: 13px;
+    margin: auto;
+    border: 2px solid currentColor;
+    border-radius: 70% 30% 70% 30%;
+    transform: rotate(45deg);
+}
+.g__sso__password-toggle::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 15px;
+    width: 2px;
+    height: 28px;
+    background: currentColor;
+    transform: rotate(35deg);
+}
+.g__sso__password-toggle.show::after { display: none; }
+.g__sso__form-field-help-link {
+    display: block;
+    margin: 28px 4px 0;
+    color: #126cfb;
+    font-size: 14px;
+    text-align: right;
+    text-decoration: none;
+}
+.g__sso__form-footer { width: 100%; margin-top: 44px; }
+.g__sso__button {
+    display: block;
+    width: 100%;
+    min-height: 60px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 16px;
+    background: #126cfb;
+    color: #fff;
+    font: 600 16px/60px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+.g__sso__button:hover { background: #0d5cda; }
+.g__sso__button:active { background: #0b4eb9; }
+.g__sso__button:focus-visible, .g__sso__modal-close:focus-visible {
+    outline: 2px solid #126cfb;
+    outline-offset: 3px;
+}
+.g__sso__form-msg, .g__sso__checkbox__label { font-size: 12px; line-height: 1.5; }
+.g__sso__legal { margin-top: 24px; }
+.g__sso__checkbox-link, .g__sso__body-copy-link, .g__sso__support-help-link { color: #126cfb; }
+.g__sso__body-copy, .g__sso__reactivate-email, .g__sso__support-help-message { text-align: center; }
+.g__sso__reactivate-email { font-weight: 700; }
+.g__sso__modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgb(35 51 64 / 65%);
+}
+.g__sso__modal {
+    position: relative;
+    width: 100%;
+    max-width: 295px;
+    max-height: calc(100dvh - 48px);
+    overflow: auto;
+    padding: 16px 16px 0;
+    border: 0;
+    border-radius: 8px;
+    background: #fff;
+    color: #0c0c0d;
+    box-shadow: 0 12px 40px rgb(0 0 0 / 12%);
+}
+.g__sso__modal-header { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.4; }
+.g__sso__modal-body { padding: 12px 0 16px; font-size: 14px; line-height: 1.5; }
+.g__sso__modal-body ul { margin: 0; padding-left: 20px; }
+.g__sso__modal-footer { background: transparent; text-align: center; }
+.g__sso__modal-close {
+    width: 100%;
+    min-height: 44px;
+    padding: 8px;
+    border: 0;
+    background: transparent;
+    color: #126cfb;
+    font: inherit;
+    cursor: pointer;
+}
